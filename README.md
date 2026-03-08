@@ -43,3 +43,13 @@ Why it matters: Shows where the business makes the most money after costs.
 
 KPI: Share of casual vs registered riders, growth by rider type
 Why it matters: Helps determine whether the company should focus on converting casual riders into registered customers.
+
+## Dataset
+
+This project uses three CSV files:
+
+bike_share_yr_0.csv — bike-sharing data for 2021
+
+bike_share_yr_1.csv — bike-sharing data for 2022
+
+cost_table.csv — yearly pricing and cost assumptions
