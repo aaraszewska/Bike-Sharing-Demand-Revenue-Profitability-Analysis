@@ -1,55 +1,102 @@
-# Bike-Sharing-Demand-Revenue-Profitability-Analysis
-## 1. Project Overview
+## 🚲 Bike Sharing Demand Analysis
+# 📌 Project Overview
 
-This project analyzes bike-sharing usage data from 2021 and 2022 to understand customer demand patterns, revenue generation, and profitability drivers. The dataset includes ride counts by hour, rider type, weather conditions, seasonality, and cost information.
+Bike-sharing systems play an increasingly important role in urban transportation. Understanding when and why people rent bikes can help operators optimize bike availability, improve service efficiency, and maximize revenue.
 
-The main purpose of the project is to help a bike-sharing business understand how demand changes over time, how different rider segments behave, and which periods generate the highest revenue and profit.
+The goal of this project is to analyze historical bike-sharing data and identify key patterns influencing bike rental demand.
 
-## 2. Business Problem
+# 📊 Dataset Description
 
-A bike-sharing company collects operational data on ride demand, customer type, weather, and time of usage, but lacks a clear analytical view of what drives business performance.
+The dataset contains historical bike rental data with information about:
 
-Without structured analysis, the company cannot easily answer important questions such as:
+Date and time of rentals
 
-when bike demand is highest
+Weather conditions
 
-how weather affects usage
+Temperature
 
-whether casual or registered riders are more valuable
+Seasonality
 
-which periods generate the highest revenue and profit
+Number of riders
 
-how to improve resource allocation and pricing decisions
+Revenue and profit metrics
 
-The business needs a data-driven solution to better understand rider behavior, identify profitability opportunities, and support strategic and operational decision-making.
+The data was stored in Microsoft SQL Server and accessed using Python with pandas.
 
-## 3. Business Goals
-### Goal 1: Understand demand patterns
+# ⚙️ Data Preparation
 
-KPI: Total riders, riders by hour, riders by season, riders by weather
-Why it matters: Helps the business plan bike availability and staffing.
+Data preparation included:
 
-### Goal 2: Increase revenue
+Connecting to the SQL Server database
 
-KPI: Total revenue, revenue by rider type, revenue by season, revenue by month
-Why it matters: Identifies the strongest revenue-generating periods and customer segments.
+Creating a SQL view combining multiple tables
 
-### Goal 3: Improve profitability
+Checking for duplicates and missing values
 
-KPI: Total profit, profit margin, profit by rider type, profit by time period
-Why it matters: Shows where the business makes the most money after costs.
+Investigating null values in the profit_margin column
 
-### Goal 4: Support marketing and retention strategy
+Null values in profit_margin occur when no bikes were rented (riders = 0), resulting in zero revenue. Since profit margin is calculated as profit divided by revenue, the value becomes undefined in those cases.
 
-KPI: Share of casual vs registered riders, growth by rider type
-Why it matters: Helps determine whether the company should focus on converting casual riders into registered customers.
+# 🔎 Exploratory Data Analysis (EDA)
 
-## Dataset
+The analysis explored several aspects of bike demand:
 
-This project uses three CSV files:
+Distribution of riders
 
-bike_share_yr_0.csv — bike-sharing data for 2021
+Demand by hour of the day
 
-bike_share_yr_1.csv — bike-sharing data for 2022
+Demand by weekday
 
-cost_table.csv — yearly pricing and cost assumptions
+Demand by season
+
+Impact of weather conditions
+
+Relationship between temperature and rider count
+
+Revenue and profit patterns across seasons
+
+Visualizations were created using Matplotlib.
+
+# 📈 Key Insights
+
+1️⃣ Bike demand peaks during commuting hours, particularly around 8 AM and 5–6 PM.
+
+2️⃣ Demand for bike rentals is highest during the summer season.
+
+3️⃣ Weather conditions significantly influence bike usage.
+
+4️⃣ Higher temperatures are associated with increased bike rental activity.
+
+5️⃣ Revenue and profit follow the same seasonal patterns as bike demand.
+
+# 💡 Business Recommendations
+
+Based on the analysis, several recommendations can be made:
+
+Increase bike availability during peak commuting hours.
+
+Allocate more bikes during warmer seasons when demand is highest.
+
+Introduce promotions during winter months to stimulate demand.
+
+Use weather forecasts to anticipate demand changes and adjust bike distribution accordingly.
+
+# 🛠 Tools & Technologies
+
+Python
+
+Pandas
+
+Matplotlib
+
+SQL
+
+Microsoft SQL Server
+
+Visual Studio Code
+
+# 📌 Conclusion
+
+The analysis demonstrates that bike-sharing demand is strongly influenced by time of day, seasonal patterns, and weather conditions.
+
+Understanding these patterns can help bike-sharing operators improve operational efficiency, optimize resource allocation, and increase profitability.
