@@ -1,0 +1,1 @@
+df.isnumm().sum()
